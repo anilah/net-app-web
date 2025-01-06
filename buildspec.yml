@@ -25,5 +25,6 @@ phases:
 
 artifacts:
   files:
-    - '**/bin/Release/net8.0/publish/**'
+    - '**/bin/Release/net8.0/publish/**/*'
   discard-paths: yes
+  base-directory: 'net-app-web/bin/Release/net8.0/publish'
