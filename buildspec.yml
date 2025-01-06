@@ -1,9 +1,30 @@
-version: 0.2    
+buildspec.yml
+version: 0.2
+
 phases:
   install:
+    runtime-versions:
+      dotnet: 8.0 # Specify the .NET version you are using
     commands:
-      - curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel STS 
+      - echo Installing .NET Core...
+      - dotnet --version
+
+  pre_build:
+    commands:
+      - echo Restoring dependencies...
+      - dotnet restore
+
   build:
     commands:
-      - dotnet restore
-      - dotnet build
+      - echo Building the project...
+      - dotnet build --configuration Release
+
+  post_build:
+    commands:
+      - echo Running tests...
+      - dotnet test --no-build --verbosity normal
+
+artifacts:
+  files:
+    - '**/bin/Release/net6.0/publish/**'
+  discard-paths: yes
