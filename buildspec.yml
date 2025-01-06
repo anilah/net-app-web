@@ -22,3 +22,9 @@ phases:
     commands:
       - echo Running tests...
       - dotnet test --no-build --verbosity normal
+
+artifacts:
+  files:
+    - '**/bin/Release/net8.0/publish/**/*'
+  discard-paths: yes
+  base-directory: 'anilah/net-app-web'
