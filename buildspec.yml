@@ -25,6 +25,6 @@ phases:
 
 artifacts:
   files:
-    - 'anilah/net-app-web/'
+    - '**/net-app-web/'
   discard-paths: yes
-  base-directory: 'anilah/net-app-web'
+  base-directory: 'net-app-web'
