@@ -25,6 +25,6 @@ phases:
 
 artifacts:
   files:
-    - '**/bin/Release/net8.0/publish/**/*'
+    - 'anilah/net-app-web/'
   discard-paths: yes
   base-directory: 'anilah/net-app-web'
